@@ -11,14 +11,14 @@
 	<body>
 	<main class="form-signin">
   <form>
-    <h1 class="h3 mb-3 fw-normal">Kalkulator tokenów</h1>
+    <h1 class="h3 mb-3 fw-normal">Kalkulator tokenów do następnego poziomu</h1>
 	<p class="lead">
-  Wpisz poziom postaci, obliczona zostanie ilość tokenów potrzebna jej do osiągnięcia kolejnego poziomu.
+  Wpisz poziom postaci, obliczona zostanie liczba tokenów potrzebna jej do osiągnięcia kolejnego poziomu.
   </p>
   <p>
   Maksymalny poziom postaci to 150.
   <p>
-
+	
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingLevel" placeholder="Poziom postaci">
       <label for="floatingLevel">Poziom postaci</label>
@@ -41,10 +41,56 @@
     document.getElementById("floatingTokens").value = wynik;
     }
     </script>
-    <p class="mt-5 mb-3 text-muted">&copy; Pandemoniczna 2021</p>
+	
+    
+  </form>
+  <hr>
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Kalkulator wymaganych tokenów</h1>
+	<p class="lead">
+  Wpisz poziom postaci oraz oczekiwany poziom postaci. Wyliczona zostanie liczba tokenów potrzebna do osiągnięcia oczekiwanego poziomu.
+  </p>
+  <p>
+  Maksymalny poziom postaci to 150. Za wpisywanie durnoctw nie odpowiadam :P
+  <p>
+  
+	
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingLevel2" placeholder="Poziom postaci">
+      <label for="floatingLevel2">Poziom postaci</label>
+    </div>
+	<div class="form-floating">
+      <input type="text" class="form-control" id="floatingDesired2" placeholder="Oczekiwany poziom postaci">
+      <label for="floatingLevel2">Oczekiwany poziom postaci</label>
+    </div>
+	<fieldset disabled>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingTokens2" placeholder="Liczba tokenów" value="0">
+      <label for="floatingTokens2">Liczba tokenów</label>
+    </div>
+	</fieldset>
+    <div class="checkbox mb-3">
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="ileTokenow2()">Oblicz</button>
+	<script type="text/javascript">
+    "use strict"
+    function ileTokenow2 () {
+    var poziom2 = document.getElementById("floatingLevel2").value;
+    poziom2 = parseFloat (poziom2);
+	var desired2 = document.getElementById("floatingDesired2").value;
+    desired2 = parseFloat (desired2);
+	var sum = 0;
+	for (var i = poziom2; i < desired2; i++) {
+	sum += Math.round(0.00565071*(Math.pow(i,2.47622)) +  1.33306);
+	}
+    document.getElementById("floatingTokens2").value = sum;
+    }
+    </script>
+	
+    
   </form>
   
-
+<p class="mt-5 mb-3 text-muted">&copy; 2021  Pandemoniczna dla LegionOfChaos <3</p>
 </main>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 	</body>
