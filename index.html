@@ -15,6 +15,9 @@
 	<p class="lead">
   Wpisz poziom postaci, obliczona zostanie ilość tokenów potrzebna jej do osiągnięcia kolejnego poziomu.
   </p>
+  <p>
+  Maksymalny poziom postaci to 150.
+  <p>
 
     <div class="form-floating">
       <input type="text" class="form-control" id="floatingLevel" placeholder="Poziom postaci">
@@ -32,9 +35,9 @@
 	<script type="text/javascript">
     "use strict"
     function ileTokenow () {
-    var poziom = document.getElementById ("floatingLevel").value;
+    var poziom = document.getElementById("floatingLevel").value;
     poziom = parseFloat (poziom);
-    var wynik = 0.00565071*poziom^2.47622 +  1.33306
+    var wynik = Math.round(0.00565071*(Math.pow(poziom,2.47622)) +  1.33306);
     document.getElementById("floatingTokens").value = wynik;
     }
     </script>
