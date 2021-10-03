@@ -1,0 +1,48 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Kalkulator tokenów Heroes of the Dark</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		
+
+	<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+	<main class="form-signin">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Kalkulator tokenów</h1>
+	<p class="lead">
+  Wpisz poziom postaci, obliczona zostanie ilość tokenów potrzebna jej do osiągnięcia kolejnego poziomu.
+  </p>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingLevel" placeholder="Poziom postaci">
+      <label for="floatingLevel">Poziom postaci</label>
+    </div>
+	<fieldset disabled>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingTokens" placeholder="Liczba tokenów" value="0">
+      <label for="floatingTokens">Liczba tokenów</label>
+    </div>
+	</fieldset>
+    <div class="checkbox mb-3">
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="ileTokenow()">Oblicz</button>
+	<script type="text/javascript">
+    "use strict"
+    function ileTokenow () {
+    var poziom = document.getElementById ("floatingInput").value;
+    poziom = parseFloat (poziom);
+    var wynik = 0.00565071*poziom^2.47622 +  1.33306
+    document.getElementById("floatingTokens").value = wynik;
+    }
+    </script>
+    <p class="mt-5 mb-3 text-muted">&copy; Pandemoniczna 2021</p>
+  </form>
+  
+
+</main>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+	</body>
+</html>
